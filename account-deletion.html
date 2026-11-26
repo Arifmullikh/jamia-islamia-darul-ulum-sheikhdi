@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030407">
+  <title>Account Deletion Portal — Jamia Islamia Darul Ulum Sheikhdi</title>
+  <meta name="description" content="Official Google Play compliant Account &amp; Data Deletion guide and request builder for Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1).">
+  <meta property="og:title" content="Account Deletion Portal — Jamia Islamia Darul Ulum Sheikhdi">
+  <meta property="og:description" content="Request account deactivation or permanent deletion for Jamia Islamia Darul Ulum Sheikhdi Android app (com.amcorestudios.madrasa1).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arifmullikh.github.io/jamia-islamia-darul-ulum-sheikhdi/account-deletion.html">
+  <meta property="og:image" content="https://arifmullikh.github.io/jamia-islamia-darul-ulum-sheikhdi/assets/sheikhdi-seal.png">
+  <link rel="icon" type="image/png" href="assets/sheikhdi-seal.png">
+  <link rel="apple-touch-icon" href="assets/sheikhdi-seal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600;700&family=Noto+Serif+Bengali:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sheikhdi_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'light' ? '#fbfbfd' : '#030407');
+      } catch (_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css?v=20261126">
+  <style>
+    .del-hero { padding: 54px 0 36px; text-align: center; }
+    .del-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 28px; }
+    .del-card {
+      padding: 30px; border-radius: 26px; background: var(--surface);
+      backdrop-filter: blur(20px); border: 1px solid var(--line); box-shadow: var(--shadow-card);
+    }
+    .del-form-card {
+      margin-top: 26px; padding: 36px; border-radius: 28px;
+      background: var(--surface); backdrop-filter: blur(22px);
+      border: 1px solid var(--gold-line); box-shadow: var(--shadow-card), var(--shadow-glow);
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+    .field-group { display: flex; flex-direction: column; gap: 7px; text-align: left; }
+    .field-group.full { grid-column: span 2; }
+    .field-label { font-size: 0.8rem; font-weight: 700; color: var(--ink-soft); }
+    .glass-input, .glass-select {
+      width: 100%; padding: 13px 16px; border-radius: 14px;
+      border: 1px solid var(--line-strong); background: var(--surface-glass);
+      color: var(--ink); font: inherit; font-size: 0.94rem; outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .glass-select option { background: var(--bg-elevated); color: var(--ink); }
+    .glass-input:focus, .glass-select:focus {
+      border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft);
+    }
+    .sla-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 0;
+    }
+    .sla-item {
+      padding: 16px 18px; border-radius: 18px; background: var(--surface-glass);
+      border: 1px solid var(--line); text-align: left;
+    }
+    .sla-num { font-family: var(--font-mono); font-size: 1.35rem; font-weight: 800; color: var(--teal); }
+    .sla-lbl { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    @media (max-width: 820px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .field-group.full { grid-column: span 1; }
+      .sla-strip { grid-template-columns: 1fr; }
+      .del-form-card, .del-card { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+  <div id="scrollLine" class="scroll-line" aria-hidden="true"></div>
+  <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+  <div class="vignette-layer" aria-hidden="true"></div>
+
+  <header class="top-nav" id="topNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand" data-cursor="Policy">
+        <span class="nav-crest">
+          <img src="assets/sheikhdi-seal.png" alt="Jamia Islamia Darul Ulum Sheikhdi Seal" width="32" height="32">
+        </span>
+        <span class="nav-title" data-en="Jamia Islamia Darul Ulum Sheikhdi" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী">Jamia Islamia Darul Ulum Sheikhdi</span>
+      </a>
+
+      <nav class="nav-controls" aria-label="Navigation Controls">
+        <div class="lang-pill" role="group" aria-label="Language Selector">
+          <div class="lang-glider" aria-hidden="true"></div>
+          <button type="button" id="btnEn" class="lang-btn" onclick="setLang('en')" aria-pressed="true">EN</button>
+          <button type="button" id="btnBn" class="lang-btn" onclick="setLang('bn')" aria-pressed="false">বাংলা</button>
+        </div>
+
+        <button type="button" id="themeSwitch" class="theme-switch" aria-label="Toggle Light or Dark Theme" aria-pressed="true">
+          <span class="switch-orb" aria-hidden="true"></span>
+        </button>
+
+        <a href="index.html" class="nav-link-btn" data-cursor="Home" data-en="Privacy Policy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="del-hero">
+      <div class="container hero-inner">
+        <div class="seal-medallion" style="width:116px;height:116px;border-radius:28px;margin-bottom:22px;" data-cursor="Seal">
+          <img src="assets/sheikhdi-seal.png" alt="Jamia Islamia Darul Ulum Sheikhdi Seal" width="96" height="96">
+        </div>
+
+        <div class="hero-eyebrow" data-en="Account &amp; Data Deletion Portal" data-bn="অ্যাকাউন্ট ও তথ্য অপসারণ পোর্টাল">Account &amp; Data Deletion Portal</div>
+
+        <h1 class="hero-h1" style="font-size:clamp(2.2rem,5vw,3.9rem);">
+          <span class="lang-en-block" data-lang="en">
+            Remove Your App Account <span class="hero-accent"><span class="serif-it">Cleanly</span>.</span>
+          </span>
+          <span class="lang-bn-block" data-lang="bn" hidden>
+            অ্যাকাউন্ট ও তথ্য <span class="hero-accent">স্থায়ীভাবে মুছুন</span>
+          </span>
+        </h1>
+
+        <p class="hero-lead"
+           data-en="Guardians, teachers (Ustads), and administrators of Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1) can request permanent account deletion or selective cloud removal below."
+           data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী অ্যাপের অনুমোদিত অভিভাবক, উস্তাদ ও প্রশাসনিক ব্যবহারকারীরা এই পেজ থেকে সরাসরি অ্যাকাউন্ট বাতিল বা তথ্য মুছে ফেলার আবেদন করতে পারবেন।">
+          Guardians, teachers (Ustads), and administrators of Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1) can request permanent account deletion or selective cloud removal below.
+        </p>
+
+        <div class="sla-strip">
+          <div class="sla-item">
+            <div class="sla-num">48 Hours</div>
+            <div class="sla-lbl" data-en="Identity &amp; office confirmation window" data-bn="পরিচয় যাচাই ও প্রাথমিক সাড়া">Identity &amp; office confirmation window</div>
+          </div>
+          <div class="sla-item">
+            <div class="sla-num">7 Days</div>
+            <div class="sla-lbl" data-en="Maximum completion for full deletion" data-bn="সর্বোচ্চ সময়সীমায় স্থায়ী অপসারণ">Maximum completion for full deletion</div>
+          </div>
+          <div class="sla-item">
+            <div class="sla-num">On-Device</div>
+            <div class="sla-lbl" data-en="Local receipts vanish immediately on uninstall" data-bn="অ্যাপ আনইনস্টল করলেই স্থানীয় ছবি মুছে যায়">Local receipts vanish immediately on uninstall</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" style="padding-top:26px;">
+      <div class="container">
+        <div class="bento-grid" style="margin-top:0;">
+          <article class="bento-tile span-4" data-cursor="Step 1">
+            <div>
+              <div class="tile-kicker" data-en="OPTION 01 · OFFICE DESK" data-bn="ধাপ ০১ · সরাসরি অফিস">OPTION 01 · OFFICE DESK</div>
+              <h3 data-en="Instant deactivation via Madrasah Office" data-bn="মাদরাসা অফিসের মাধ্যমে তাৎক্ষণিক নিষ্ক্রিয়করণ">Instant deactivation via Madrasah Office</h3>
+              <p data-en="Contact the Muhtamim office at Sheikhdi Bottola, Jatrabari, Dhaka to immediately suspend your Ustad login or unlink your Guardian phone &amp; PIN profile."
+                 data-bn="যাত্রাবাড়ীর শেখদী বটতলা মাদরাসা অফিসে যোগাযোগ করে মুহূর্তের মধ্যে উস্তাদ লগইন বা অভিভাবক পিন সংযোগ বন্ধ করতে পারবেন।">
+                Contact the Muhtamim office at Sheikhdi Bottola, Jatrabari, Dhaka to immediately suspend your Ustad login or unlink your Guardian phone &amp; PIN profile.
+              </p>
+            </div>
+          </article>
+
+          <article class="bento-tile span-4" data-cursor="Step 2">
+            <div>
+              <div class="tile-kicker" data-en="WHAT IS DELETED" data-bn="যা স্থায়ীভাবে মুছে যায়">WHAT IS DELETED</div>
+              <h3 data-en="Auth login, PIN access &amp; FCM tokens" data-bn="লগইন প্রোফাইল, পিন ও নোটিফিকেশন টোকেন">Auth login, PIN access &amp; FCM tokens</h3>
+              <p data-en="Your Firebase Authentication user credential, linked portal access profile, guardian app PIN access, push notification token, and personal contact profile inside app access tables are permanently deleted."
+                 data-bn="আপনার Firebase লগইন অ্যাকাউন্ট, অ্যাপ প্রবেশের পিন, ডিভাইস নোটিফিকেশন টোকেন এবং পোর্টালের ব্যক্তিগত অ্যাক্সেস প্রোফাইল স্থায়ীভাবে মুছে ফেলা হয়।">
+                Your Firebase Authentication user credential, linked portal access profile, guardian app PIN access, push notification token, and personal contact profile inside app access tables are permanently deleted.
+              </p>
+            </div>
+          </article>
+
+          <article class="bento-tile span-4" data-cursor="Policy">
+            <div>
+              <div class="tile-kicker" data-en="INSTITUTIONAL RETENTION" data-bn="আইনি ও প্রাতিষ্ঠানিক সংরক্ষণ">INSTITUTIONAL RETENTION</div>
+              <h3 data-en="Statutory fee &amp; attendance ledgers" data-bn="অফিশিয়াল হিসাব ও নিরীক্ষা নথি">Statutory fee &amp; attendance ledgers</h3>
+              <p data-en="Previously issued school fee receipts and mandatory academic attendance audit logs remain only where required for Jamia accounting and legal record-keeping, stripped of active login access."
+                 data-bn="মাদরাসার অভ্যন্তরীণ আর্থিক অডিট ও জরুরি দাপ্তরিক নথির প্রয়োজনে পূর্বের বেতনের রসিদ বা হিসাব কেবল নিষ্ক্রিয় ও পরিচয়-বিচ্ছিন্ন অবস্থায় সংরক্ষিত থাকতে পারে।">
+                Previously issued school fee receipts and mandatory academic attendance audit logs remain only where required for Jamia accounting and legal record-keeping, stripped of active login access.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive Request Composer -->
+        <div class="del-form-card" id="composer">
+          <div class="kicker" data-en="Direct Deletion Composer" data-bn="ডিলিট অনুরোধ প্রস্তুতকারক">Direct Deletion Composer</div>
+          <h2 style="font-size:clamp(1.45rem,2.8vw,2rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:8px;"
+              data-en="Submit a Verified Deletion Request"
+              data-bn="অ্যাকাউন্ট ডিলিট করার আবেদন পাঠান">
+            Submit a Verified Deletion Request
+          </h2>
+          <p style="color:var(--muted);max-width:680px;"
+             data-en="Fill out the details linked to your Jamia Islamia Darul Ulum Sheikhdi account. Your email client will open pre-addressed to arifmullikh.personal@gmail.com, or copy the formatted request with one tap."
+             data-bn="আপনার ব্যবহৃত পদবি ও নিবন্ধিত নম্বর/ইমেইল লিখুন। নিচের বাটনে চাপ দিলে ইমেইল অ্যাপ সরাসরি ঠিকানা ও বার্তাসহ খুলে যাবে, অথবা এক ক্লিকে বার্তাটি কপি করতে পারবেন।">
+            Fill out the details linked to your Jamia Islamia Darul Ulum Sheikhdi account. Your email client will open pre-addressed to arifmullikh.personal@gmail.com, or copy the formatted request with one tap.
+          </p>
+
+          <form onsubmit="return handleDeleteSubmit(event)">
+            <div class="form-grid">
+              <div class="field-group">
+                <label class="field-label" for="delRole" data-en="Account Role" data-bn="ব্যবহারকারীর ধরন">Account Role</label>
+                <select id="delRole" class="glass-select">
+                  <option value="Guardian">Guardian (অভিভাবক)</option>
+                  <option value="Ustad">Ustad / Teacher (উস্তাদ)</option>
+                  <option value="Muhtamim">Muhtamim / Admin (মুহতামিম)</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="delContact" data-en="Registered Mobile Number or Email" data-bn="নিবন্ধিত মোবাইল নম্বর বা ইমেইল">Registered Mobile Number or Email</label>
+                <input id="delContact" class="glass-input" type="text" required placeholder="e.g., 01XXXXXXXXX or ustad@jamia.org">
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="delStudent" data-en="Student Name &amp; Jamat (if Guardian)" data-bn="ছাত্রের নাম ও জামাত (অভিভাবক হলে)">Student Name &amp; Jamat (if Guardian)</label>
+                <input id="delStudent" class="glass-input" type="text" placeholder="Optional for staff / Optional reference">
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="delScope" data-en="Deletion Scope" data-bn="কী মুছতে চান">Deletion Scope</label>
+                <select id="delScope" class="glass-select">
+                  <option value="Full Account & App Access Deletion">Full Account &amp; App Access Deletion (সম্পূর্ণ অ্যাকাউন্ট বাতিল)</option>
+                  <option value="Guardian Phone & PIN Reset / Removal">Guardian Phone &amp; PIN Removal (পিন ও অভিভাবক প্রবেশাধিকার মুছুন)</option>
+                  <option value="Notification Token & Partial Data Removal">Notification Token / Selective Data Removal (আংশিক তথ্য অপসারণ)</option>
+                </select>
+              </div>
+
+              <div class="field-group full">
+                <label class="field-label" for="delNotes" data-en="Additional Verification Details" data-bn="অতিরিক্ত তথ্য (ঐচ্ছিক)">Additional Verification Details</label>
+                <input id="delNotes" class="glass-input" type="text" placeholder="Reason or preferred callback timing (optional)">
+              </div>
+            </div>
+
+            <div class="contact-actions" style="justify-content:flex-start;margin-top:24px;">
+              <button type="submit" class="apple-btn-primary" data-cursor="Send">
+                <span data-en="Open Pre-Filled Deletion Email" data-bn="ইমেইল অ্যাপে আবেদন খুলুন">Open Pre-Filled Deletion Email</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+              <button type="button" class="apple-btn-secondary" onclick="copyDeletionRequest()" data-cursor="Copy" data-en="Copy Formatted Request" data-bn="আবেদন বার্তা কপি করুন">
+                Copy Formatted Request
+              </button>
+              <button type="button" class="email-chip" style="margin-bottom:0;" onclick="copyText('arifmullikh.personal@gmail.com')" data-cursor="Copy">
+                arifmullikh.personal@gmail.com
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong style="color:var(--ink);" data-en="Jamia Islamia Darul Ulum Sheikhdi" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী">Jamia Islamia Darul Ulum Sheikhdi</strong>
+        <span> · </span>
+        <span data-en="Sheikhdi Bottola, Jatrabari, Dhaka · Built by AM Core Studios" data-bn="শেখদী বটতলা, যাত্রাবাড়ী, ঢাকা · কারিগরি নির্মাণে AM Core Studios">Sheikhdi Bottola, Jatrabari, Dhaka · Built by AM Core Studios</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html" data-en="Privacy Policy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a></li>
+        <li><a href="index.html#s4" data-en="Permissions" data-bn="অনুমতি">Permissions</a></li>
+        <li><a href="mailto:arifmullikh.personal@gmail.com" data-en="Contact Support" data-bn="সহায়তা">Contact Support</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button type="button" id="backTop" class="back-top" onclick="window.smoothScrollTo(0)" aria-label="Back to top">
+    <svg class="ring" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+      <circle cx="23" cy="23" r="19" stroke="var(--line)" stroke-width="2" />
+      <circle id="ringArc" cx="23" cy="23" r="19" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="119.38" />
+    </svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="js/webgl-stage.js?v=20261126"></script>
+  <script src="js/motion-engine.js?v=20261126"></script>
+  <script src="js/app.js?v=20261126"></script>
+  <script>
+    function buildDeletionBody() {
+      var role = document.getElementById('delRole').value;
+      var contact = document.getElementById('delContact').value.trim() || '[Enter Registered Phone / Email]';
+      var student = document.getElementById('delStudent').value.trim() || 'N/A';
+      var scope = document.getElementById('delScope').value;
+      var notes = document.getElementById('delNotes').value.trim() || 'None';
+      return [
+        'Assalamu Alaikum,',
+        '',
+        'Please process the following account/data deletion request for Jamia Islamia Darul Ulum Sheikhdi (com.amcorestudios.madrasa1):',
+        '',
+        '- Account Role: ' + role,
+        '- Registered Phone / Email: ' + contact,
+        '- Student Name & Jamat: ' + student,
+        '- Deletion Scope: ' + scope,
+        '- Additional Notes: ' + notes,
+        '',
+        'Thank you.'
+      ].join('\n');
+    }
+
+    function handleDeleteSubmit(e) {
+      e.preventDefault();
+      var subject = encodeURIComponent('Account Deletion Request - Jamia Islamia Darul Ulum Sheikhdi');
+      var body = encodeURIComponent(buildDeletionBody());
+      window.location.href = 'mailto:arifmullikh.personal@gmail.com?subject=' + subject + '&body=' + body;
+      return false;
+    }
+
+    function copyDeletionRequest() {
+      copyText(buildDeletionBody());
+    }
+  </script>
+</body>
+</html>

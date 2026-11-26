@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030407">
+  <title>Privacy Policy — Jamia Islamia Darul Ulum Sheikhdi</title>
+  <meta name="description" content="Official Privacy Policy &amp; Data Protection Charter for the Jamia Islamia Darul Ulum Sheikhdi Android application (com.amcorestudios.madrasa1) by AM Core Studios.">
+  <meta property="og:title" content="Privacy Policy — Jamia Islamia Darul Ulum Sheikhdi">
+  <meta property="og:description" content="Zero ads, zero trackers, strict role isolation, and complete institutional transparency for guardians, ustads, and administration.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arifmullikh.github.io/jamia-islamia-darul-ulum-sheikhdi/">
+  <meta property="og:image" content="https://arifmullikh.github.io/jamia-islamia-darul-ulum-sheikhdi/assets/sheikhdi-seal.png">
+  <link rel="icon" type="image/png" href="assets/sheikhdi-seal.png">
+  <link rel="apple-touch-icon" href="assets/sheikhdi-seal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600;700&family=Noto+Serif+Bengali:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sheikhdi_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'light' ? '#fbfbfd' : '#030407');
+      } catch (_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css?v=20261126">
+</head>
+<body>
+  <!-- Cinematic Luxury Curtain Preloader -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-crest">
+      <svg class="preloader-ring" viewBox="0 0 132 132" fill="none">
+        <circle cx="66" cy="66" r="62" stroke="rgba(234,179,72,0.35)" stroke-width="1.5" stroke-dasharray="6 6" />
+      </svg>
+      <img src="assets/sheikhdi-seal.png" alt="" width="88" height="88">
+    </div>
+    <div class="preloader-bar"><div id="preloaderFill" class="preloader-fill"></div></div>
+    <div id="preloaderPct" class="preloader-pct">00%</div>
+  </div>
+
+  <!-- Magnetic Cursor & Top Progress Ribbon -->
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+  <div id="scrollLine" class="scroll-line" aria-hidden="true"></div>
+
+  <!-- Real-Time Three.js WebGL Stage -->
+  <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+  <div class="vignette-layer" aria-hidden="true"></div>
+
+  <!-- Apple Frosted Floating Navbar -->
+  <header class="top-nav" id="topNav">
+    <div class="container nav-inner">
+      <a href="#top" class="nav-brand" data-cursor="Top">
+        <span class="nav-crest">
+          <img src="assets/sheikhdi-seal.png" alt="Jamia Islamia Darul Ulum Sheikhdi Seal" width="32" height="32">
+        </span>
+        <span class="nav-title" data-en="Jamia Islamia Darul Ulum Sheikhdi" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী">Jamia Islamia Darul Ulum Sheikhdi</span>
+      </a>
+
+      <nav class="nav-controls" aria-label="Portal Controls">
+        <div class="lang-pill" role="group" aria-label="Language Selector">
+          <div class="lang-glider" aria-hidden="true"></div>
+          <button type="button" id="btnEn" class="lang-btn" onclick="setLang('en')" aria-pressed="true">EN</button>
+          <button type="button" id="btnBn" class="lang-btn" onclick="setLang('bn')" aria-pressed="false">বাংলা</button>
+        </div>
+
+        <button type="button" id="themeSwitch" class="theme-switch" aria-label="Toggle Light or Dark Theme" aria-pressed="true">
+          <span class="switch-orb" aria-hidden="true"></span>
+        </button>
+
+        <a href="account-deletion.html" class="nav-link-btn" data-cursor="Portal" data-en="Delete Account" data-bn="অ্যাকাউন্ট ডিলিট">Delete Account</a>
+
+        <button type="button" class="nav-ghost-btn" onclick="window.print()" data-en="Print / PDF" data-bn="প্রিন্ট / PDF">Print / PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Stage -->
+    <section class="hero-stage" id="top">
+      <div class="container hero-inner" id="heroInner">
+        <div class="seal-medallion" data-cursor="Seal">
+          <img src="assets/sheikhdi-seal.png" alt="Official Emblem of Jamia Islamia Darul Ulum Sheikhdi, Dhaka" width="128" height="128">
+        </div>
+
+        <div class="hero-eyebrow" data-en="Official Privacy &amp; Data Protection Charter" data-bn="প্রাতিষ্ঠানিক অফিশিয়াল প্রাইভেসি ও তথ্য সুরক্ষা সনদ">
+          Official Privacy &amp; Data Protection Charter
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="lang-en-block" data-lang="en">
+            <span class="split-line"><span class="split-inner">Built on</span></span>
+            <span class="split-line"><span class="split-inner"><span class="hero-accent"><span class="serif-it">Amanah</span> &amp; Trust.</span></span></span>
+          </span>
+          <span class="lang-bn-block" data-lang="bn" hidden>
+            <span class="split-line"><span class="split-inner">আমাদের অঙ্গীকার</span></span>
+            <span class="split-line"><span class="split-inner"><span class="hero-accent">স্বচ্ছতা ও <span class="serif-it">আমানত</span></span></span></span>
+          </span>
+        </h1>
+
+        <p class="hero-lead"
+           data-en="Every attendance sheet, fee ledger, and family record inside Jamia Islamia Darul Ulum Sheikhdi is protected as a sacred institutional trust — zero ads, zero tracking SDKs, and strict role-based boundaries."
+           data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী অ্যাপে সংরক্ষিত প্রতিটি ছাত্রের হাজিরা, ফলাফল ও অভিভাবকের তথ্য আমাদের কাছে আমানত। এতে কোনো বিজ্ঞাপন বা গোপন ট্র্যাকিং নেই; প্রত্যেক ব্যবহারকারীর তথ্য কেবল তাঁর নির্ধারিত গণ্ডির মধ্যেই সুরক্ষিত থাকে।">
+          Every attendance sheet, fee ledger, and family record inside Jamia Islamia Darul Ulum Sheikhdi is protected as a sacred institutional trust — zero ads, zero tracking SDKs, and strict role-based boundaries.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#showcase" class="apple-btn-primary" data-cursor="Explore">
+            <span data-en="Explore Privacy Architecture" data-bn="সুরক্ষা কাঠামো দেখুন">Explore Privacy Architecture</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <a href="account-deletion.html" class="apple-btn-secondary" data-cursor="Delete">
+            <span data-en="Request Account Deletion" data-bn="অ্যাকাউন্ট ডিলিট অনুরোধ">Request Account Deletion</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-meta-line">
+          <span>
+            <strong data-en="Institution:" data-bn="প্রতিষ্ঠান:">Institution:</strong>
+            <span data-en="Jamia Islamia Darul Ulum Sheikhdi, Jatrabari, Dhaka" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী, শেখদী বটতলা, যাত্রাবাড়ী, ঢাকা">Jamia Islamia Darul Ulum Sheikhdi, Jatrabari, Dhaka</span>
+          </span>
+          <span><strong data-en="Developer:" data-bn="ডেভেলপার:">Developer:</strong> AM Core Studios</span>
+          <span><strong data-en="App ID:" data-bn="অ্যাপ আইডি:">App ID:</strong> <code>com.amcorestudios.madrasa1</code></span>
+          <span>
+            <strong data-en="Effective:" data-bn="হালনাগাদ:">Effective:</strong>
+            <span data-en="November 2026" data-bn="নভেম্বর ২০২৬">November 2026</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Marquee -->
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Zero Advertising SDKs" data-bn="শতভাগ বিজ্ঞাপনমুক্ত">Zero Advertising SDKs</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Zero Analytics Trackers" data-bn="কোনো অ্যানালিটিক্স ট্র্যাকার নেই">Zero Analytics Trackers</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Strict Role Isolation" data-bn="রোল-ভিত্তিক কঠোর নিরাপত্তা">Strict Role Isolation</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="On-Device Receipt Photos" data-bn="রসিদের ছবি শুধু ডিভাইসেই">On-Device Receipt Photos</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Foreground-Only Qibla GPS" data-bn="লোকেশন শুধু কিবলা ও নামাজে">Foreground-Only Qibla GPS</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Secret-Free Office Backups" data-bn="পিন ও পাসওয়ার্ডমুক্ত ব্যাকআপ">Secret-Free Office Backups</span></span>
+        <!-- Seamless duplicate sequence -->
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Zero Advertising SDKs" data-bn="শতভাগ বিজ্ঞাপনমুক্ত">Zero Advertising SDKs</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Zero Analytics Trackers" data-bn="কোনো অ্যানালিটিক্স ট্র্যাকার নেই">Zero Analytics Trackers</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Strict Role Isolation" data-bn="রোল-ভিত্তিক কঠোর নিরাপত্তা">Strict Role Isolation</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="On-Device Receipt Photos" data-bn="রসিদের ছবি শুধু ডিভাইসেই">On-Device Receipt Photos</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Foreground-Only Qibla GPS" data-bn="লোকেশন শুধু কিবলা ও নামাজে">Foreground-Only Qibla GPS</span></span>
+        <span class="marquee-item"><span class="marquee-dot"></span><span data-en="Secret-Free Office Backups" data-bn="পিন ও পাসওয়ার্ডমুক্ত ব্যাকআপ">Secret-Free Office Backups</span></span>
+      </div>
+    </div>
+
+    <!-- Pinned Scrollytelling Showcase -->
+    <section class="band-showcase" id="showcase">
+      <div class="container">
+        <div class="showcase-header gsap-rise">
+          <div class="kicker" data-en="How Protection Works" data-bn="সুরক্ষা ব্যবস্থা">How Protection Works</div>
+          <h2 class="display-title" data-en="Privacy engineered into every screen." data-bn="অ্যাপের প্রতিটি পর্দায় অদৃশ্য নিরাপত্তা প্রহরী।">Privacy engineered into every screen.</h2>
+        </div>
+
+        <div class="showcase-grid" id="showcaseGrid">
+          <div class="chapters">
+            <article class="chapter active" data-scene="0" onclick="activateScene(0)" data-cursor="Inspect">
+              <div class="chapter-num">01 / ZERO TRACKING</div>
+              <h3 data-en="Pure utility. Zero commercial surveillance." data-bn="বাণিজ্যিক নজরদারি বা বিজ্ঞাপন থেকে সম্পূর্ণ মুক্ত।">Pure utility. Zero commercial surveillance.</h3>
+              <p data-en="The compiled Android build excludes AdMob, Firebase Analytics, Crashlytics, and third-party ad networks. No student or parent profile is ever monetized or profiled."
+                 data-bn="অ্যাপটিতে কোনো AdMob, Firebase Analytics, Crashlytics বা তৃতীয় পক্ষের বিজ্ঞাপন নেটওয়ার্ক যুক্ত নেই। ছাত্র বা অভিভাবকদের কোনো তথ্যই বাণিজ্যিক উদ্দেশ্যে ব্যবহার করা হয় না।">
+                The compiled Android build excludes AdMob, Firebase Analytics, Crashlytics, and third-party ad networks. No student or parent profile is ever monetized or profiled.
+              </p>
+            </article>
+
+            <article class="chapter" data-scene="1" onclick="activateScene(1)" data-cursor="Inspect">
+              <div class="chapter-num">02 / ROLE ISOLATION</div>
+              <h3 data-en="Guardians, Ustads &amp; Muhtamim stay cleanly separated." data-bn="অভিভাবক, উস্তাদ ও মুহতামিমের তথ্যের আলাদা প্রাচীর।">Guardians, Ustads &amp; Muhtamim stay cleanly separated.</h3>
+              <p data-en="Database rules verify identity and assigned classes before serving any record. Guardians only view their own linked child, and deactivated staff lose access immediately."
+                 data-bn="সার্ভারের নিরাপত্তা নিয়ম প্রতিবার যাচাই করে কে কোন তথ্য দেখার অধিকার রাখেন। অভিভাবক শুধু নিজ সন্তানের বিবরণ দেখেন, আর কোনো উস্তাদকে নিষ্ক্রিয় করলে মুহূর্তেই তাঁর প্রবেশ বন্ধ হয়ে যায়।">
+                Database rules verify identity and assigned classes before serving any record. Guardians only view their own linked child, and deactivated staff lose access immediately.
+              </p>
+            </article>
+
+            <article class="chapter" data-scene="2" onclick="activateScene(2)" data-cursor="Inspect">
+              <div class="chapter-num">03 / LOCAL RECEIPT VAULT</div>
+              <h3 data-en="Paper fee receipt photos never leave your handset." data-bn="রসিদের ছবি শুধু আপনার নিজ ফোনেই সংরক্ষিত থাকে।">Paper fee receipt photos never leave your handset.</h3>
+              <p data-en="When staff capture a paper fee slip with CameraX, the compressed JPEG is written privately to internal device storage (filesDir/receipts) and never uploaded to cloud buckets."
+                 data-bn="বেতনের কাগজের রসিদের ছবি তুললে তা সংকুচিত হয়ে শুধুমাত্র আপনার ফোনের অভ্যন্তরীণ মেমোরিতে (filesDir/receipts) জমা থাকে; কখনোই ক্লাউড স্টোরেজে আপলোড হয় না।">
+                When staff capture a paper fee slip with CameraX, the compressed JPEG is written privately to internal device storage (filesDir/receipts) and never uploaded to cloud buckets.
+              </p>
+            </article>
+
+            <article class="chapter" data-scene="3" onclick="activateScene(3)" data-cursor="Inspect">
+              <div class="chapter-num">04 / PURPOSEFUL PERMISSIONS</div>
+              <h3 data-en="One-shot foreground location, or pick a district manually." data-bn="লোকেশন শুধু কিবলা ও নামাজের সময়ে, জেলা বাছাইয়েরও সুযোগ।">One-shot foreground location, or pick a district manually.</h3>
+              <p data-en="Background GPS tracking is completely absent. If you prefer zero location access, simply select your Bangladesh district manually for prayer times and Qibla direction."
+                 data-bn="অ্যাপ ব্যাকগ্রাউন্ডে কখনোই আপনার অবস্থান পর্যবেক্ষণ করে না। আপনি চাইলে জিপিএস অনুমতি ছাড়াই সরাসরি তালিকা থেকে নিজের জেলা বেছে নিয়ে নামাজ ও কিবলার সময় দেখতে পারবেন।">
+                Background GPS tracking is completely absent. If you prefer zero location access, simply select your Bangladesh district manually for prayer times and Qibla direction.
+              </p>
+            </article>
+          </div>
+
+          <div class="device-pin-col">
+            <div class="device-frame" data-cursor="Device">
+              <div class="device-screen">
+                <div class="dynamic-island"><span class="island-dot" aria-hidden="true"></span></div>
+
+                <div class="scenes-stage">
+                  <!-- Scene 0 -->
+                  <div class="scene active" data-scene="0">
+                    <div class="shield-core">
+                      <span class="shield-ring" aria-hidden="true"></span>
+                      <span class="shield-pulse" aria-hidden="true"></span>
+                      <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="1.8" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                      </svg>
+                      <span class="blocked-tag bt-1">AD-SDK: 0</span>
+                      <span class="blocked-tag bt-2">TRACKER: 0</span>
+                    </div>
+                    <div class="scene-caption">
+                      <h4 data-en="Clean Binary Guarantee" data-bn="ট্র্যাকারমুক্ত সফটওয়্যার">Clean Binary Guarantee</h4>
+                      <p data-en="No ad networks, telemetry loggers, or cross-app identifiers compiled." data-bn="কোনো বিজ্ঞাপন কোড বা লুকানো অ্যানালিটিক্স যুক্ত নেই।">No ad networks, telemetry loggers, or cross-app identifiers compiled.</p>
+                    </div>
+                  </div>
+
+                  <!-- Scene 1 -->
+                  <div class="scene" data-scene="1">
+                    <div class="wallet-stack">
+                      <div class="wallet-card">
+                        <div>
+                          <strong data-en="Guardian Scope" data-bn="অভিভাবক সীমা">Guardian Scope</strong>
+                          <small data-en="Phone + PIN · Read-only child view" data-bn="ফোন ও পিন · শুধু নিজ সন্তানের তথ্য">Phone + PIN · Read-only child view</small>
+                        </div>
+                        <span class="lock-pill" data-en="Scoped" data-bn="সীমিত">Scoped</span>
+                      </div>
+                      <div class="wallet-card">
+                        <div>
+                          <strong data-en="Ustad Scope" data-bn="উস্তাদ সীমা">Ustad Scope</strong>
+                          <small data-en="Assigned jamats &amp; delegated flags" data-bn="শুধু নির্ধারিত জামাত ও অনুমতি">Assigned jamats &amp; delegated flags</small>
+                        </div>
+                        <span class="lock-pill" data-en="Class-Locked" data-bn="জামাতবদ্ধ">Class-Locked</span>
+                      </div>
+                      <div class="wallet-card">
+                        <div>
+                          <strong data-en="Muhtamim Vault" data-bn="মুহতামিম প্যানেল">Muhtamim Vault</strong>
+                          <small data-en="Full oversight &amp; offline Excel exports" data-bn="পূর্ণ নিয়ন্ত্রণ ও নিরাপদ ব্যাকআপ">Full oversight &amp; offline Excel exports</small>
+                        </div>
+                        <span class="lock-pill" data-en="Admin" data-bn="অ্যাডমিন">Admin</span>
+                      </div>
+                    </div>
+                    <div class="scene-caption">
+                      <h4 data-en="Three Distinct Boundaries" data-bn="তিন স্তরের নিরাপত্তা প্রাচীর">Three Distinct Boundaries</h4>
+                      <p data-en="Server-side Firestore rules enforce every read and write rule." data-bn="সার্ভার পর্যায়ে প্রতিটি তথ্য আদান-প্রদান যাচাই করা হয়।">Server-side Firestore rules enforce every read and write rule.</p>
+                    </div>
+                  </div>
+
+                  <!-- Scene 2 -->
+                  <div class="scene" data-scene="2">
+                    <div class="receipt-box">
+                      <span class="scan-beam" aria-hidden="true"></span>
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <path d="M4 3h16v18l-2-1.5L16 21l-2-1.5L12 21l-2-1.5L8 21l-2-1.5L4 21V3z"/>
+                        <path d="M8 8h8M8 12h6"/>
+                      </svg>
+                      <small style="font-family: var(--font-mono); font-size: 0.68rem; opacity: 0.8;">filesDir/receipts</small>
+                    </div>
+                    <div class="scene-caption">
+                      <h4 data-en="On-Device Camera Capture" data-bn="ফোনের ভেতরেই রসিদ সংরক্ষণ">On-Device Camera Capture</h4>
+                      <p data-en="Compressed locally for office proof; zero photo uploads to servers." data-bn="ছবিগুলো ক্লাউডে যায় না, সরাসরি আপনার ফোনেই সুরক্ষিত থাকে।">Compressed locally for office proof; zero photo uploads to servers.</p>
+                    </div>
+                  </div>
+
+                  <!-- Scene 3 -->
+                  <div class="scene" data-scene="3">
+                    <div class="compass-dial">
+                      <svg class="compass-needle-anim" width="66" height="66" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9.5" stroke="rgba(234,179,72,0.5)" stroke-width="1.2"/>
+                        <path d="M12 4.5l3 7.5-3 7.5-3-7.5 3-7.5z" fill="#14b8a6" stroke="#eab348" stroke-width="1"/>
+                      </svg>
+                    </div>
+                    <div class="scene-caption">
+                      <h4 data-en="Zero Background GPS" data-bn="ব্যাকগ্রাউন্ড জিপিএস মুক্ত">Zero Background GPS</h4>
+                      <p data-en="Rounded (~100 m) coordinates for prayer times; district list optional." data-bn="অতিরিক্ত সূক্ষ্মতা ছাড়াই নামাজের সময় হিসাব ও জেলা বাছাইয়ের সুবিধা।">Rounded (~100 m) coordinates for prayer times; district list optional.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="device-dots" role="tablist" aria-label="Architecture Scenes">
+                  <button type="button" class="d-dot active" onclick="activateScene(0)" aria-label="Scene 1"></button>
+                  <button type="button" class="d-dot" onclick="activateScene(1)" aria-label="Scene 2"></button>
+                  <button type="button" class="d-dot" onclick="activateScene(2)" aria-label="Scene 3"></button>
+                  <button type="button" class="d-dot" onclick="activateScene(3)" aria-label="Scene 4"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Bento Grid -->
+    <section class="section-band" id="architecture">
+      <div class="container">
+        <div class="gsap-rise">
+          <div class="kicker" data-en="Data Architecture" data-bn="তথ্যের বিন্যাস ও নিরাপত্তা">Data Architecture</div>
+          <h2 class="display-title" data-en="What lives on your device, and what syncs." data-bn="কোন তথ্য ফোনে থাকে, আর কোনটি ক্লাউডে।">What lives on your device, and what syncs.</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-tile span-7" data-cursor="Inspect">
+            <div>
+              <div class="tile-kicker" data-en="HYBRID STORAGE" data-bn="দ্বিস্তরীয় সংরক্ষণ">HYBRID STORAGE</div>
+              <h3 data-en="Local SQLite + DataStore paired with scoped Cloud Firestore" data-bn="লোকাল ডাটাবেস ও সুরক্ষিত ক্লাউড সিঙ্ক">Local SQLite + DataStore paired with scoped Cloud Firestore</h3>
+              <p data-en="Preferences, offline Islamic books, tasbih counts, audio caches, and CameraX fee receipt JPEGs remain exclusively inside private app storage on your Android phone. Core madrasah rosters, attendance, exam marks, fee ledgers, leave requests, and notices sync securely via Google Firebase Firestore with offline Room caching."
+                 data-bn="অ্যাপ সেটিংস, তাসবিহ গণনা, অফলাইন কিতাব-হাদিস এবং বেতনের কাগজের রসিদের ছবি শুধুমাত্র আপনার ফোনের ব্যক্তিগত স্টোরেজেই থাকে। ছাত্র তালিকা, দৈনিক হাজিরা, পরীক্ষার নম্বর, নোটিশ ও বেতনের হিসাব নিরাপদে Firebase Firestore-এ সিঙ্ক হয়।">
+                Preferences, offline Islamic books, tasbih counts, audio caches, and CameraX fee receipt JPEGs remain exclusively inside private app storage on your Android phone. Core madrasah rosters, attendance, exam marks, fee ledgers, leave requests, and notices sync securely via Google Firebase Firestore with offline Room caching.
+              </p>
+            </div>
+          </article>
+
+          <article class="bento-tile span-5" data-cursor="Inspect">
+            <div>
+              <div class="tile-kicker" data-en="FEE LEDGER CLARITY" data-bn="আর্থিক লেনদেনের স্বচ্ছতা">FEE LEDGER CLARITY</div>
+              <h3 data-en="Records paid receipts — never bank cards or wallet PINs" data-bn="শুধু পরিশোধিত রসিদের হিসাব — কোনো ব্যাংক বা পিন তথ্য নয়">Records paid receipts — never bank cards or wallet PINs</h3>
+              <p data-en="When recording tuition or admission fees settled via Cash, bKash, Nagad, Rocket, or Bank, the app stores only receipt metadata (amount, month, date, reference) for bookkeeping. It never runs an in-app payment checkout or reads account passwords/OTPs."
+                 data-bn="নগদ, বিকাশ, নগদ, রকেট বা ব্যাংকের মাধ্যমে আগেই পরিশোধিত ফি-এর কেবল তারিখ, পরিমাণ ও রসিদ তথ্য হিসাবের খাতায় তোলা হয়। অ্যাপের ভেতরে কোনো কার্ড নম্বর, পিন বা ওটিপি নেওয়া হয় না।">
+                When recording tuition or admission fees settled via Cash, bKash, Nagad, Rocket, or Bank, the app stores only receipt metadata (amount, month, date, reference) for bookkeeping. It never runs an in-app payment checkout or reads account passwords/OTPs.
+              </p>
+            </div>
+          </article>
+
+          <article class="bento-tile span-4" data-cursor="Inspect">
+            <div>
+              <div class="tile-kicker" data-en="SECRET SANITIZATION" data-bn="গোপন তথ্য ফিল্টার">SECRET SANITIZATION</div>
+              <h3 data-en="Secret-stripping Excel &amp; JSON backups" data-bn="পিন ও পাসওয়ার্ডমুক্ত অফিস ব্যাকআপ">Secret-stripping Excel &amp; JSON backups</h3>
+              <p data-en="Muhtamim exports automatically omit password, pin, pinhash, token, idtoken, refreshtoken, secret, apikey, and authpassword keys before writing any local backup file."
+                 data-bn="মুহতামিম যখন .xlsx বা .json ব্যাকআপ নেন, তখন কোড স্বয়ংক্রিয়ভাবে সকল password, pin, token বা secret কী বাদ দিয়ে ফাইল তৈরি করে।">
+                Muhtamim exports automatically omit password, pin, pinhash, token, idtoken, refreshtoken, secret, apikey, and authpassword keys before writing any local backup file.
+              </p>
+            </div>
+          </article>
+
+          <article class="bento-tile span-4" data-cursor="Inspect">
+            <div>
+              <div class="tile-kicker" data-en="ISLAMIC RESOURCES" data-bn="ইসলামিক লাইব্রেরি">ISLAMIC RESOURCES</div>
+              <h3 data-en="Verified Quran, Hadith, Qibla &amp; Live Makkah/Madinah streams" data-bn="কুরআন, হাদিস, কিবলা ও মক্কা-মদিনা লাইভ">Verified Quran, Hadith, Qibla &amp; Live Makkah/Madinah streams</h3>
+              <p data-en="Read-only educational endpoints fetch Ayahs, translations, recitations, prayer timetables (using rounded coordinates), and open-source Qawmi kitab packs without sending user identity."
+                 data-bn="ব্যক্তিগত পরিচয় না পাঠিয়েই কুরআন, তিলাওয়াত, কওমি কিতাব প্যাক এবং আনুমানিক স্থানাঙ্ক ব্যবহার করে নামাজের সময়সূচি সংগ্রহ করা হয়।">
+                Read-only educational endpoints fetch Ayahs, translations, recitations, prayer timetables (using rounded coordinates), and open-source Qawmi kitab packs without sending user identity.
+              </p>
+            </div>
+          </article>
+
+          <article class="bento-tile span-4" data-cursor="Inspect">
+            <div>
+              <div class="tile-kicker" data-en="OUTREACH CONTROL" data-bn="অভিভাবক যোগাযোগ">OUTREACH CONTROL</div>
+              <h3 data-en="User-triggered WhatsApp &amp; SMS alerts" data-bn="ব্যবহারকারীর সম্মতিতে বার্তা প্রেরণ">User-triggered WhatsApp &amp; SMS alerts</h3>
+              <p data-en="Individual messages launch your own WhatsApp or SMS app manually, while optional institutional notices can use Firebase Cloud Messaging or official madrasah messaging gateways."
+                 data-bn="সরাসরি হোয়াটসঅ্যাপ বা এসএমএস পাঠাতে আপনার নিজের অ্যাপ খোলা হয়; পাশাপাশি প্রতিষ্ঠান চাইলে অফিশিয়াল নোটিফিকেশন ও বার্তা সেবা চালু করতে পারে।">
+                Individual messages launch your own WhatsApp or SMS app manually, while optional institutional notices can use Firebase Cloud Messaging or official madrasah messaging gateways.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Role Access Matrix -->
+    <section class="section-band" id="roles">
+      <div class="container">
+        <div class="role-section gsap-rise">
+          <div class="role-top">
+            <div>
+              <div class="kicker" data-en="Interactive Access Matrix" data-bn="রোল-ভিত্তিক প্রবেশাধিকার">Interactive Access Matrix</div>
+              <h2 style="font-size: clamp(1.5rem, 2.8vw, 2.15rem); font-weight: 800; letter-spacing: -0.03em;"
+                  data-en="Choose a role inside Jamia Islamia Darul Ulum Sheikhdi"
+                  data-bn="আপনার ভূমিকা বেছে নিয়ে তথ্যের সীমা দেখে নিন">
+                Choose a role inside Jamia Islamia Darul Ulum Sheikhdi
+              </h2>
+            </div>
+
+            <div class="segmented" role="tablist" aria-label="Account Role">
+              <div class="seg-glider" id="roleGlider" aria-hidden="true"></div>
+              <button type="button" class="seg-btn" onclick="setRole(0)" aria-selected="true" data-en="Guardian" data-bn="অভিভাবক">Guardian</button>
+              <button type="button" class="seg-btn" onclick="setRole(1)" aria-selected="false" data-en="Ustad" data-bn="উস্তাদ">Ustad</button>
+              <button type="button" class="seg-btn" onclick="setRole(2)" aria-selected="false" data-en="Muhtamim" data-bn="মুহতামিম">Muhtamim</button>
+            </div>
+          </div>
+
+          <div id="roleCols" class="role-cols"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Policy & Interactive Search / Drawers -->
+    <section class="section-band" id="details">
+      <div class="container">
+        <div class="details-layout">
+          <aside class="toc-nav" aria-label="Table of Contents">
+            <div class="toc-label" data-en="Policy Contents" data-bn="নীতিমালার সূচি">Policy Contents</div>
+            <ul class="toc-links">
+              <div id="tocBar" class="toc-bar" aria-hidden="true"></div>
+              <li><a class="toc-a active" href="#s1" data-en="1. Scope &amp; Identity" data-bn="১. পরিধি ও পরিচয়">1. Scope &amp; Identity</a></li>
+              <li><a class="toc-a" href="#s2" data-en="2. Data We Collect" data-bn="২. সংগৃহীত তথ্য">2. Data We Collect</a></li>
+              <li><a class="toc-a" href="#s3" data-en="3. Storage &amp; Backups" data-bn="৩. সংরক্ষণ ও ব্যাকআপ">3. Storage &amp; Backups</a></li>
+              <li><a class="toc-a" href="#s4" data-en="4. Android Permissions" data-bn="৪. অ্যান্ড্রয়েড অনুমতি">4. Android Permissions</a></li>
+              <li><a class="toc-a" href="#s5" data-en="5. External Services" data-bn="৫. তৃতীয় পক্ষের সেবা">5. External Services</a></li>
+              <li><a class="toc-a" href="#s6" data-en="6. Fee Tracking" data-bn="৬. বেতন ও ফি হিসাব">6. Fee Tracking</a></li>
+              <li><a class="toc-a" href="#s7" data-en="7. Children's Privacy" data-bn="৭. অপ্রাপ্তবয়স্ক সুরক্ষা">7. Children's Privacy</a></li>
+              <li><a class="toc-a" href="#s8" data-en="8. Data Retention" data-bn="৮. তথ্য সংরক্ষণের মেয়াদ">8. Data Retention</a></li>
+              <li><a class="toc-a" href="#s9" data-en="9. Deletion &amp; Rights" data-bn="৯. ডিলিট ও অধিকার">9. Deletion &amp; Rights</a></li>
+              <li><a class="toc-a" href="#s10" data-en="10. Updates &amp; Contact" data-bn="১০. পরিবর্তন ও যোগাযোগ">10. Updates &amp; Contact</a></li>
+            </ul>
+          </aside>
+
+          <div id="policyBody">
+            <div class="search-box">
+              <svg class="search-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              <input id="searchField" class="search-field" type="search" aria-label="Search full privacy policy" placeholder="Search the full policy (e.g., camera, location, guardian, deletion)...">
+              <div class="search-actions">
+                <span id="searchBadge" class="search-badge" aria-live="polite"></span>
+                <button id="searchClear" class="search-clear" type="button" onclick="clearSearch()" data-en="Clear" data-bn="মুছুন">Clear</button>
+                <span class="kbd" title="Press / to search">/</span>
+              </div>
+            </div>
+
+            <div id="noMatch" class="note-banner" style="display:none;">
+              <span data-en="No sections matched your search term. Clear the filter or try keywords like camera, location, Firebase, guardian, or deletion."
+                    data-bn="আপনার খোঁজা শব্দটির সাথে কোনো অনুচ্ছেদ মেলেনি। সার্চ বক্স খালি করুন অথবা ক্যামেরা, লোকেশন, অভিভাবক বা ডিলিট লিখে খুঁজুন।">
+                No sections matched your search term.
+              </span>
+            </div>
+
+            <!-- Section 1 -->
+            <article id="s1" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>1. Overview, Scope &amp; Institutional Identity</h2>
+                <p>This Privacy Policy governs your use of the official mobile application for <strong>Jamia Islamia Darul Ulum Sheikhdi</strong> (located at Sheikhdi Bottola, Jatrabari, Dhaka, Bangladesh), distributed on Android under application package ID <code>com.amcorestudios.madrasa1</code> and developed in collaboration with <strong>AM Core Studios</strong>.</p>
+                <p>The app unifies two experiences under strict privacy safeguards: (1) an institutional academic, attendance, exam, notice, and tuition management platform exclusively for authorized <strong>Muhtamims (Administrators)</strong>, <strong>Ustads (Teachers)</strong>, and <strong>Guardians</strong>; and (2) offline-friendly Islamic learning tools including the Holy Quran, Hadith collections, Masnoon Dua, Qibla compass, Prayer Times, and Digital Tasbih.</p>
+                <div class="note-banner"><strong>Core Commitment:</strong> Jamia Islamia Darul Ulum Sheikhdi displays <strong>no third-party advertising</strong>, contains <strong>zero AdMob, Analytics, or Crashlytics SDKs</strong>, and never sells or shares student, staff, or guardian records with data brokers.</div>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>১. পরিচিতি, পরিধি ও প্রাতিষ্ঠানিক দায়বদ্ধতা</h2>
+                <p>এই গোপনীয়তা নীতিমালা <strong>জামিয়া ইসলামিয়া দারুল উলুম শেখদী</strong> (শেখদী বটতলা, যাত্রাবাড়ী, ঢাকা)-এর অফিশিয়াল অ্যান্ড্রয়েড অ্যাপ্লিকেশন ব্যবহারের ক্ষেত্রে প্রযোজ্য। অ্যাপটি <code>com.amcorestudios.madrasa1</code> প্যাকেজ আইডির অধীনে <strong>AM Core Studios</strong>-এর কারিগরি সহযোগিতায় পরিচালিত হয়।</p>
+                <p>অ্যাপটিতে দুটি মূল অংশ রয়েছে: (১) প্রতিষ্ঠানের অনুমোদিত <strong>মুহতামিম (প্রশাসন)</strong>, <strong>উস্তাদ (শিক্ষক)</strong> এবং <strong>অভিভাবকদের</strong> জন্য ছাত্র হাজিরা, পরীক্ষার ফলাফল, নোটিশ ও বেতন ব্যবস্থাপনা; এবং (২) সবার জন্য অফলাইন-সমর্থিত কুরআন, হাদিস, মাসনুন দোয়া, কিবলা কম্পাস, নামাজের সময়সূচি ও ডিজিটাল তাসবিহ।</p>
+                <div class="note-banner"><strong>মূল অঙ্গীকার:</strong> আমাদের অ্যাপে কোনো <strong>বিজ্ঞাপন প্রদর্শন করা হয় না</strong>, কোনো গোপন ট্র্যাকিং বা অ্যানালিটিক্স SDK নেই এবং ছাত্র-অভিভাবকের কোনো তথ্য তৃতীয় পক্ষের কাছে বিক্রি বা হস্তান্তর করা হয় না।</div>
+              </div>
+            </article>
+
+            <!-- Section 2 -->
+            <article id="s2" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>2. Information Collected &amp; Managed</h2>
+                <p>Unlike open social networks, accounts inside this portal are provisioned specifically by the madrasah administration for verified institutional use:</p>
+                <ul class="article-list">
+                  <li><strong>Account &amp; Authentication Credentials:</strong> Muhtamims and Ustads sign in with an institution-issued email and password managed securely by <strong>Firebase Authentication</strong>. Guardians sign in with their registered mobile number and a 4–6 digit numeric PIN. Raw passwords and PINs are never exposed or stored in plain text inside database tables or exports.</li>
+                  <li><strong>Student &amp; Guardian Directory Data:</strong> Student full name, class/jamat assignment, roll number, residential/non-residential status, monthly fee schedule, guardian name, guardian phone number, and optional local notes entered by madrasah administration.</li>
+                  <li><strong>Academic, Attendance &amp; Staff Logs:</strong> Daily attendance records, exam marks, published results, jamat routines, notices, teacher leave requests (optional medical/family reason, dates, and leave notes), fee payment entries, guardian outreach logs, and admin audit trails tracking operational actions by user ID and timestamp.</li>
+                  <li><strong>Push Notification Tokens:</strong> When institutional messaging is active, an FCM registration token linked to the signed-in account allows timely delivery of attendance, notice, and leave notifications.</li>
+                </ul>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>২. কোন কোন তথ্য সংগৃহীত ও পরিচালিত হয়</h2>
+                <p>এই অ্যাপে যেকোনো মানুষ নিজে থেকে পাবলিক প্রোফাইল খুলতে পারেন না; প্রতিষ্ঠানের প্রয়োজন অনুযায়ী মাদরাসা কর্তৃপক্ষের মাধ্যমে নিবন্ধিত তথ্য সংরক্ষিত হয়:</p>
+                <ul class="article-list">
+                  <li><strong>অ্যাকাউন্ট ও প্রবেশের তথ্য:</strong> মুহতামিম ও উস্তাদগণ প্রাতিষ্ঠানিক ইমেইল ও পাসওয়ার্ডের মাধ্যমে এবং অভিভাবকগণ নিবন্ধিত মোবাইল নম্বর ও ৪–৬ সংখ্যার গোপন পিনের মাধ্যমে <strong>Firebase Authentication</strong>-এ লগইন করেন। কারো মূল পাসওয়ার্ড বা পিন কোনো ডেটাবেস টেবিল বা ব্যাকআপে উন্মুক্ত থাকে না।</li>
+                  <li><strong>ছাত্র ও অভিভাবকের তথ্য:</strong> ছাত্রের নাম, জামাত, রোল নম্বর, আবাসিক বা অনাবাসিক ধরন, মাসিক বেতনের পরিমাণ, অভিভাবকের নাম ও যোগাযোগের মোবাইল নম্বর।</li>
+                  <li><strong>হাজিরা, পরীক্ষা, ছুটি ও কাজের লগ:</strong> দৈনিক হাজিরার হিসাব, পরীক্ষার নম্বর ও ফলাফল, ক্লাস রুটিন, নোটিশ, উস্তাদদের ছুটির আবেদন ও কারণ এবং প্রশাসনিক কাজের স্বচ্ছতার জন্য অ্যাক্টিভিটি লগ।</li>
+                  <li><strong>নোটিফিকেশন টোকেন:</strong> জরুরি নোটিশ বা হাজিরা বার্তা পাঠানোর জন্য ডিভাইসের Firebase Cloud Messaging (FCM) টোকেন ব্যবহৃত হতে পারে।</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Section 3 -->
+            <article id="s3" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>3. Storage Architecture, Security Rules &amp; Offline Backups</h2>
+                <p>Data is partitioned across encrypted transport channels and isolated local storage boundaries:</p>
+                <ul class="article-list">
+                  <li><strong>Cloud Firestore &amp; Strict Access Rules:</strong> Active madrasah records synchronize over HTTPS/TLS with Google Cloud Firestore. Role-based Security Rules verify whether the signed-in user is an active <code>admin</code>, an active <code>ustad</code> limited strictly to assigned <code>classIds</code> and explicit capability flags (<code>canAttendance</code>, <code>canMessage</code>, <code>canAddStudent</code>, <code>canCollectFee</code>), or a <code>guardian</code> restricted exclusively to their linked child.</li>
+                  <li><strong>On-Device Room &amp; Preferences Storage:</strong> Offline caches, user preferences, bookmarked Quran Ayahs/Hadiths, Tasbih counts, and compressed fee receipt JPEGs (under <code>filesDir/receipts</code>) remain strictly inside Android's sandboxed app directory on your handset.</li>
+                  <li><strong>Secret-Sanitized Office Backups:</strong> Muhtamim administrators may export an offline institutional backup (<code>.xlsx</code> or <code>.json</code>). Before writing any export, the serializer automatically strips any key matching <code>password</code>, <code>pin</code>, <code>pinhash</code>, <code>token</code>, <code>idtoken</code>, <code>refreshtoken</code>, <code>secret</code>, <code>apikey</code>, or <code>authpassword</code>.</li>
+                  <li><strong>Optional Self-Hosted Institutional Backend:</strong> Where enabled by the institution for automated messaging, dedicated Firebase Cloud Functions and a secured institutional PostgreSQL database store guardian messaging queues and delivery audit logs strictly for official madrasah notices.</li>
+                </ul>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৩. তথ্য সংরক্ষণ, নিরাপত্তা নিয়ম ও অফলাইন ব্যাকআপ</h2>
+                <p>তথ্য সুরক্ষিত রাখতে আধুনিক এনক্রিপ্টেড যোগাযোগ ব্যবস্থা ও পৃথক স্টোরেজ ব্যবহার করা হয়:</p>
+                <ul class="article-list">
+                  <li><strong>Cloud Firestore ও রোল-ভিত্তিক নিরাপত্তা:</strong> মাদরাসার ক্লাউড তথ্য HTTPS/TLS এনক্রিপশনের মাধ্যমে Google Cloud Firestore-এ আদান-প্রদান হয়। সার্ভারের কঠোর নিয়ম নিশ্চিত করে যে <code>admin</code> (মুহতামিম), নির্ধারিত জামাত ও অনুমতিপ্রাপ্ত <code>ustad</code> (<code>canAttendance</code>, <code>canMessage</code>, <code>canAddStudent</code>, <code>canCollectFee</code>) এবং নিজ সন্তানের তথ্যে সীমাবদ্ধ <code>guardian</code>—কেউই নির্ধারিত সীমার বাইরে কোনো তথ্য দেখতে বা বদলাতে পারেন না।</li>
+                  <li><strong>ফোনের অভ্যন্তরীণ মেমোরি:</strong> অ্যাপ সেটিংস, অফলাইন কিতাব/হাদিস, তাসবিহ গণনা এবং কাগজের রসিদের সংকুচিত ছবি (<code>filesDir/receipts</code>) শুধুমাত্র আপনার অ্যান্ড্রয়েড ডিভাইসের নিজস্ব গোপন ফোল্ডারেই সংরক্ষিত থাকে।</li>
+                  <li><strong>পিন ও পাসওয়ার্ডমুক্ত ব্যাকআপ:</strong> মুহতামিম চাইলে অফিসিয়াল কাজের জন্য <code>.xlsx</code> বা <code>.json</code> ব্যাকআপ নিতে পারেন। তবে ফাইল তৈরির সময় কোড স্বয়ংক্রিয়ভাবে <code>password</code>, <code>pin</code>, <code>pinhash</code>, <code>token</code>, <code>secret</code> বা <code>apikey</code> জাতীয় সব সংবেদনশীল অংশ বাদ দিয়ে দেয়।</li>
+                  <li><strong>প্রাতিষ্ঠানিক স্বয়ংক্রিয় বার্তা সার্ভার (ঐচ্ছিক):</strong> মাদরাসা কর্তৃপক্ষ স্বয়ংক্রিয় বার্তা সেবা চালু রাখলে অনুমোদিত Cloud Functions ও সুরক্ষিত PostgreSQL ডেটাবেস শুধুই অভিভাবকদের জরুরি নোটিশ পাঠানোর কাজে ব্যবহৃত হয়।</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Section 4 -->
+            <article id="s4" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>4. Android Device Permissions &amp; Exact Purpose</h2>
+                <p>Every Android permission declared by <code>com.amcorestudios.madrasa1</code> serves a visible, user-triggered feature. Tap any item below to inspect its exact technical behavior:</p>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৪. অ্যান্ড্রয়েড ডিভাইসের অনুমতি ও ব্যবহারের সুনির্দিষ্ট কারণ</h2>
+                <p>অ্যাপটিতে কেবল দৃশ্যমান ও দরকারি সুবিধার জন্যই নির্দিষ্ট কয়েকটি অনুমতি চাওয়া হয়। বিস্তারিত জানতে নিচের প্রতিটি অনুমতির ওপর ক্লিক করুন:</p>
+              </div>
+
+              <div class="perm-rows">
+                <div class="perm-row" data-open="true">
+                  <button type="button" class="perm-btn" onclick="toggleDrawer(this)" data-cursor="Toggle">
+                    <div>
+                      <span class="perm-name" data-en="Camera" data-bn="ক্যামেরা (Camera)">Camera</span>
+                      <span class="perm-key">android.permission.CAMERA</span>
+                    </div>
+                    <span class="perm-tag" data-en="Local Receipt Capture" data-bn="স্থানীয় রসিদ সংরক্ষণ">Local Receipt Capture</span>
+                    <svg class="perm-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  </button>
+                  <div class="perm-drawer">
+                    <div class="perm-drawer-inner">
+                      <div class="perm-drawer-text">
+                        <span class="lang-en-block" data-lang="en">Used exclusively when fee-authorized staff tap "Attach Receipt Photo" inside the fee screen. CameraX captures and compresses the paper receipt directly into private internal storage (<code>filesDir/receipts</code>). Photos are never uploaded to Firebase Storage, never scanned for biometrics, and never transmitted off the device.</span>
+                        <span class="lang-bn-block" data-lang="bn" hidden>শুধুমাত্র ফি সংগ্রহের অনুমতিপ্রাপ্ত দায়িত্বশীল ব্যক্তি যখন কাগজের রসিদের ছবি সংযুক্ত করতে চান, তখনই CameraX ব্যবহার করে ছবি তোলা হয়। ছবিটি সংকুচিত হয়ে শুধুই আপনার ফোনের ভেতরে (<code>filesDir/receipts</code>) থাকে; কখনোই ক্লাউডে বা সার্ভারে আপলোড করা হয় না।</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="perm-row" data-open="false">
+                  <button type="button" class="perm-btn" onclick="toggleDrawer(this)" data-cursor="Toggle">
+                    <div>
+                      <span class="perm-name" data-en="Precise &amp; Approximate Location" data-bn="লোকেশন (জিপিএস)">Precise &amp; Approximate Location</span>
+                      <span class="perm-key">ACCESS_FINE_LOCATION · ACCESS_COARSE_LOCATION</span>
+                    </div>
+                    <span class="perm-tag" data-en="Foreground Only · Optional" data-bn="শুধু সক্রিয় পর্দায় · ঐচ্ছিক">Foreground Only · Optional</span>
+                    <svg class="perm-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  </button>
+                  <div class="perm-drawer">
+                    <div class="perm-drawer-inner">
+                      <div class="perm-drawer-text">
+                        <span class="lang-en-block" data-lang="en">Requested strictly as a one-shot foreground read while viewing Qibla Compass, Prayer Times, or Nearby Mosques. Coordinates used for Aladhan prayer calculations are rounded to ~100 m (<code>%.3f</code> precision). Background location tracking is disabled completely, and you may select any Bangladesh district manually without granting GPS permission.</span>
+                        <span class="lang-bn-block" data-lang="bn" hidden>শুধুমাত্র আপনি যখন কিবলা কম্পাস, নামাজের সময়সূচি বা নিকটবর্তী মসজিদ পর্দাটি চালু করেন, তখন একবার অবস্থান নির্ণয়ের জন্য ব্যবহৃত হয়। ব্যাকগ্রাউন্ডে কখনোই লোকেশন ট্র্যাক হয় না। চাইলে জিপিএস অনুমতি না দিয়েই সরাসরি বাংলাদেশের ৬৪ জেলার তালিকা থেকে নিজের এলাকা বাছাই করা যায়।</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="perm-row" data-open="false">
+                  <button type="button" class="perm-btn" onclick="toggleDrawer(this)" data-cursor="Toggle">
+                    <div>
+                      <span class="perm-name" data-en="Notifications" data-bn="নোটিফিকেশন">Notifications</span>
+                      <span class="perm-key">android.permission.POST_NOTIFICATIONS</span>
+                    </div>
+                    <span class="perm-tag" data-en="Prayer &amp; Institutional Alerts" data-bn="নামাজ ও জরুরি বিজ্ঞপ্তি">Prayer &amp; Institutional Alerts</span>
+                    <svg class="perm-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  </button>
+                  <div class="perm-drawer">
+                    <div class="perm-drawer-inner">
+                      <div class="perm-drawer-text">
+                        <span class="lang-en-block" data-lang="en">Used to deliver prayer time reminders, Quran audio player controls, attendance notifications, and official notices from Jamia Islamia Darul Ulum Sheikhdi. Can be customized or muted at any time in Android Settings.</span>
+                        <span class="lang-bn-block" data-lang="bn" hidden>নামাজের ওয়াক্তের স্মরণবার্তা, কুরআন তিলাওয়াত চালানোর নিয়ন্ত্রণ, সন্তানের হাজিরা সংবাদ এবং মাদরাসার জরুরি নোটিশ পৌঁছাতে এই অনুমতি ব্যবহৃত হয়। যেকোনো সময় ফোনের সেটিংস থেকে তা বন্ধ করা যায়।</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="perm-row" data-open="false">
+                  <button type="button" class="perm-btn" onclick="toggleDrawer(this)" data-cursor="Toggle">
+                    <div>
+                      <span class="perm-name" data-en="Media Playback, Wake Lock &amp; Vibration" data-bn="অডিও প্লেব্যাক, স্ক্রিন ও ভাইব্রেশন">Media Playback, Wake Lock &amp; Vibration</span>
+                      <span class="perm-key">FOREGROUND_SERVICE_MEDIA_PLAYBACK · WAKE_LOCK · VIBRATE</span>
+                    </div>
+                    <span class="perm-tag" data-en="Quran Audio &amp; Tasbih" data-bn="তিলাওয়াত ও তাসবিহ">Quran Audio &amp; Tasbih</span>
+                    <svg class="perm-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  </button>
+                  <div class="perm-drawer">
+                    <div class="perm-drawer-inner">
+                      <div class="perm-drawer-text">
+                        <span class="lang-en-block" data-lang="en">Keeps Holy Quran audio recitations and Makkah/Madinah broadcasts playing smoothly when the screen turns off via Android Media3, prevents dimming while reading Quran pages, and provides gentle haptic feedback during Digital Tasbih counting.</span>
+                        <span class="lang-bn-block" data-lang="bn" hidden>ফোনের স্ক্রিন বন্ধ থাকলেও নির্বিঘ্নে কুরআন তিলাওয়াত চালিয়ে রাখা, কুরআন-হাদিস পড়ার সময় আলো ধরে রাখা এবং ডিজিটাল তাসবিহ গণনায় হালকা ভাইব্রেশন অনুভূতির জন্য ব্যবহৃত হয়।</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="perm-row" data-open="false">
+                  <button type="button" class="perm-btn" onclick="toggleDrawer(this)" data-cursor="Toggle">
+                    <div>
+                      <span class="perm-name" data-en="Network &amp; Internet Access" data-bn="ইন্টারনেট ও নেটওয়ার্ক সংযোগ">Network &amp; Internet Access</span>
+                      <span class="perm-key">INTERNET · ACCESS_NETWORK_STATE</span>
+                    </div>
+                    <span class="perm-tag" data-en="Sync &amp; Islamic APIs" data-bn="সিঙ্ক ও ইসলামিক সেবা">Sync &amp; Islamic APIs</span>
+                    <svg class="perm-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  </button>
+                  <div class="perm-drawer">
+                    <div class="perm-drawer-inner">
+                      <div class="perm-drawer-text">
+                        <span class="lang-en-block" data-lang="en">Required for secure Firebase Firestore synchronization, fetching Quran/Tafsir/Audio resources, resolving prayer times, and downloading offline Islamic content packs. Offline features continue operating smoothly without connectivity.</span>
+                        <span class="lang-bn-block" data-lang="bn" hidden>নিরাপদ Firebase ক্লাউড সিঙ্ক, কুরআন ও তাফসীর ডাউনলোড, নামাজের সময় হালনাগাদ এবং অফলাইন কিতাব প্যাক সংগ্রহের জন্য ইন্টারনেট সংযোগ প্রয়োজন হয়। ইন্টারনেট না থাকলেও সংরক্ষিত অফলাইন ফিচারগুলো সচল থাকে।</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Section 5 -->
+            <article id="s5" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>5. Third-Party Content Providers &amp; External Outreach</h2>
+                <p>To deliver accurate Islamic study tools and reliable cloud syncing without cluttering the app, only the specific services below are contacted:</p>
+                <ul class="article-list">
+                  <li><strong>Google Firebase (Auth, Firestore, Messaging):</strong> Handles encrypted login, role-verified institutional data sync, and push delivery.</li>
+                  <li><strong>Quran, Hadith &amp; Recitation APIs:</strong> Anonymous, read-only requests are sent to <code>api.quran.com</code>, <code>api.alquran.cloud</code>, <code>everyayah.com</code>, <code>islamicapi.com</code>, Saudi Broadcasting live HLS feeds (<code>cdn-globecast.akamaized.net</code>), and static GitHub educational packs (<code>Arifmullikh/annur-content</code>, <code>Arifmullikh/qawmi-kitab</code>) without personal identifiers.</li>
+                  <li><strong>Prayer Times &amp; Mosque Discovery:</strong> Rounded coordinates (or selected district coordinates) query <code>api.aladhan.com</code> and public OpenStreetMap Overpass mirrors (<code>overpass.private.coffee</code>, <code>maps.mail.ru</code>, <code>overpass-api.de</code>).</li>
+                  <li><strong>Guardian Communication:</strong> When staff choose WhatsApp or SMS outreach inside the app, Android launches the user's own WhatsApp, WhatsApp Business, or default SMS app to message a selected guardian one by one — never bulk-harvesting device contacts. Optional automated notices, if configured by the institution, route via Meta WhatsApp Cloud API or a licensed Bangladesh SMS provider.</li>
+                </ul>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৫. তৃতীয় পক্ষের ইসলামিক সেবা ও বহিঃযোগাযোগ</h2>
+                <p>সঠিক ইসলামিক তথ্য এবং নির্ভরযোগ্য ক্লাউড সেবা প্রদানের জন্য শুধুমাত্র নিচের সুনির্দিষ্ট উৎসগুলোর সাথে সংযোগ স্থাপন করা হয়:</p>
+                <ul class="article-list">
+                  <li><strong>Google Firebase (Auth, Firestore, Messaging):</strong> নিরাপদ লগইন, রোল-ভিত্তিক ডেটা সিঙ্ক ও নোটিফিকেশন সরবরাহের জন্য ব্যবহৃত হয়।</li>
+                  <li><strong>কুরআন, হাদিস ও তিলাওয়াত উৎস:</strong> ব্যক্তিগত কোনো পরিচয় না পাঠিয়েই শুধুই পাঠযোগ্য তথ্য আনার জন্য <code>api.quran.com</code>, <code>api.alquran.cloud</code>, <code>everyayah.com</code>, <code>islamicapi.com</code>, মক্কা-মদিনা লাইভ HLS স্ট্রিম (<code>cdn-globecast.akamaized.net</code>) এবং GitHub-এর স্ট্যাটিক কিতাব প্যাক (<code>Arifmullikh/annur-content</code>, <code>Arifmullikh/qawmi-kitab</code>) ব্যবহৃত হয়।</li>
+                  <li><strong>নামাজের সময় ও নিকটস্থ মসজিদ:</strong> আনুমানিক স্থানাঙ্ক (প্রায় ১০০ মিটার সীমায় সংকুচিত) বা জেলা তালিকা থেকে <code>api.aladhan.com</code> ও OpenStreetMap Overpass সার্ভার (<code>overpass.private.coffee</code>, <code>maps.mail.ru</code>, <code>overpass-api.de</code>) থেকে তথ্য আনা হয়।</li>
+                  <li><strong>অভিভাবকদের সাথে যোগাযোগ:</strong> শিক্ষক বা প্রশাসন চাইলে সরাসরি হোয়াটসঅ্যাপ বা এসএমএস আইকনে চাপ দিয়ে নিজের ফোনের অ্যাপের মাধ্যমে নির্বাচিত অভিভাবককে একক বার্তা পাঠাতে পারেন; ফোনের পুরো কন্টাক্ট লিস্ট কখনোই সংগ্রহ করা হয় না।</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Section 6 -->
+            <article id="s6" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>6. Tuition Ledger &amp; Financial Data Transparency</h2>
+                <p>The fee module inside <strong>Jamia Islamia Darul Ulum Sheikhdi</strong> functions strictly as an administrative receipt and ledger book for monthly tuition, admission, exam, or boarding dues.</p>
+                <p>Administrators and authorized teachers select how a payment was already settled offline or externally (<code>cash</code>, <code>bkash</code>, <code>nagad</code>, <code>rocket</code>, or <code>bank</code>) and enter the receipt amount and date. <strong>The application never initiates in-app mobile wallet checkouts and never requests, processes, or stores debit/credit card numbers, bank passwords, or mobile-banking PINs/OTPs.</strong></p>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৬. বেতন ও আর্থিক হিসাব সংক্রান্ত স্বচ্ছতা</h2>
+                <p><strong>জামিয়া ইসলামিয়া দারুল উলুম শেখদী</strong> অ্যাপের বেতন বা ফি ব্যবস্থাপনা কেবল একটি ডিজিটাল হিসাব খাতা ও রসিদ সংরক্ষণ ব্যবস্থা হিসেবে কাজ করে।</p>
+                <p>দোকান বা অফিস কাউন্টারে নগদ, বিকাশ, নগদ, রকেট বা ব্যাংকের মাধ্যমে আগেই পরিশোধিত ফি-এর কেবল ধরন, তারিখ ও টাকার পরিমাণ এখানে লিপিবদ্ধ করা হয়। <strong>এই অ্যাপের ভেতর থেকে কোনো অনলাইন পেমেন্ট গেটওয়ে চালানো হয় না এবং কখনোই ব্যাংক কার্ড নম্বর, পাসওয়ার্ড, পিন বা ওটিপি সংগ্রহ করা হয় না।</strong></p>
+              </div>
+            </article>
+
+            <!-- Section 7 -->
+            <article id="s7" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>7. Children's Privacy &amp; Parental Supervision</h2>
+                <p>Students enrolled at Jamia Islamia Darul Ulum Sheikhdi do not independently register accounts, engage in public social chats, or encounter advertisements inside the application.</p>
+                <p>Every student record is created and maintained strictly by authorized school leadership and accessed externally only through a verified parent or legal guardian's mobile number and PIN. Guardians may inspect, correct, or request deletion of their child's digital app profile at any time through the madrasah office or our Privacy Officer.</p>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৭. অপ্রাপ্তবয়স্ক ছাত্রদের তথ্য সুরক্ষা</h2>
+                <p>মাদরাসার অপ্রাপ্তবয়স্ক শিক্ষার্থীরা এই অ্যাপে আলাদা করে কোনো পাবলিক অ্যাকাউন্ট তৈরি করে না, কোনো উন্মুক্ত চ্যাটিং সুবিধা নেই এবং অ্যাপের কোথাও বিজ্ঞাপন বা প্রোফাইলিং চলে না।</p>
+                <p>শিক্ষার্থীদের একাডেমিক ও হাজিরা তথ্য কেবল অনুমোদিত মাদরাসা প্রশাসন দ্বারা পরিচালিত হয় এবং পিতামাতা বা বৈধ অভিভাবকের যাচাইকৃত মোবাইল নম্বর ও গোপন পিনের মাধ্যমে প্রদর্শিত হয়। অভিভাবক চাইলে যেকোনো সময় সন্তানের তথ্য সংশোধন বা ডিজিটাল প্রোফাইল মুছে ফেলার আবেদন করতে পারেন।</p>
+              </div>
+            </article>
+
+            <!-- Section 8 -->
+            <article id="s8" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>8. Data Retention &amp; Administrative Governance</h2>
+                <p>Student, attendance, and ledger records remain active while a student or guardian maintains an active enrollment relationship with Jamia Islamia Darul Ulum Sheikhdi. Staff credentials can be suspended immediately by the Muhtamim, blocking all subsequent authentication and Firestore writes.</p>
+                <p>On-device data such as offline receipts, cached Quran tracks, and local preferences remain solely on your phone and are deleted automatically when you clear app storage or uninstall the application.</p>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৮. তথ্য সংরক্ষণের সময়সীমা ও প্রাতিষ্ঠানিক নিয়ন্ত্রণ</h2>
+                <p>মাদরাসায় ছাত্র ও অভিভাবকের সংযোগ সক্রিয় থাকা পর্যন্ত ক্লাউড তথ্য সংরক্ষিত থাকে। কোনো উস্তাদ বা স্টাফ দায়িত্ব থেকে অব্যাহতি নিলে মুহতামিম তাৎক্ষণিক তাঁর অ্যাকাউন্ট নিষ্ক্রিয় করে দিতে পারেন।</p>
+                <p>ফোনের ভেতরে থাকা স্থানীয় রসিদের ছবি, ডাউনলোডকৃত অডিও এবং অ্যাপ সেটিংস আনইনস্টল করা বা অ্যাপের ডেটা ক্লিয়ার করার সাথে সাথেই পুরোপুরি মুছে যায়।</p>
+              </div>
+            </article>
+
+            <!-- Section 9 -->
+            <article id="s9" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>9. Your Privacy Rights &amp; Account Deletion</h2>
+                <p>In full alignment with Google Play's Data Safety and Account Deletion standards, users and guardians may request access to, correction of, or permanent deletion of their digital app account and cloud records.</p>
+                <p>Use our dedicated <a href="account-deletion.html">Account Deletion Portal</a> or write directly to <a href="mailto:arifmullikh.personal@gmail.com">arifmullikh.personal@gmail.com</a>. Requests are acknowledged within <strong>48 hours</strong> and completed within <strong>7 business days</strong> following verification with the madrasah administration.</p>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>৯. ব্যবহারকারীর অধিকার ও অ্যাকাউন্ট ডিলিট করার প্রক্রিয়া</h2>
+                <p>Google Play-এর সর্বশেষ নীতিমালা অনুযায়ী যেকোনো অনুমোদিত ব্যবহারকারী বা অভিভাবক তাঁর ডিজিটাল অ্যাকাউন্ট এবং সংশ্লিষ্ট তথ্য সংশোধন, প্রদর্শন বা স্থায়ীভাবে মুছে ফেলার অনুরোধ জানাতে পারবেন।</p>
+                <p>বিস্তারিত ধাপ জানতে আমাদের <a href="account-deletion.html">অ্যাকাউন্ট ডিলিট পোর্টাল</a> দেখুন অথবা <a href="mailto:arifmullikh.personal@gmail.com">arifmullikh.personal@gmail.com</a> ঠিকানায় ইমেইল করুন। যাচাইয়ের পর সর্বোচ্চ <strong>৭ কার্যদিবসের</strong> মধ্যে অনুরোধ কার্যকর করা হয়।</p>
+              </div>
+            </article>
+
+            <!-- Section 10 -->
+            <article id="s10" class="policy-article gsap-rise">
+              <div class="lang-en-block" data-lang="en">
+                <h2>10. Policy Updates &amp; Contact Information</h2>
+                <p>When new features or legal requirements necessitate revisions, this portal is updated alongside a visible effective date at the top of the document. Material changes affecting guardian or staff permissions are communicated through official madrasah notices inside the application.</p>
+              </div>
+              <div class="lang-bn-block" data-lang="bn" hidden>
+                <h2>১০. নীতিমালার হালনাগাদ ও যোগাযোগ</h2>
+                <p>ভবিষ্যতে অ্যাপে নতুন কোনো সুবিধা বা আইনি শর্ত যুক্ত হলে এই পোর্টালের নীতিমালা হালনাগাদ করে ওপরের তারিখে তা জানিয়ে দেওয়া হবে। গুরুত্বপূর্ণ কোনো পরিবর্তন হলে অ্যাপের নোটিশ বোর্ডের মাধ্যমেও অভিভাবক ও শিক্ষকদের অবহিত করা হবে।</p>
+              </div>
+            </article>
+
+            <!-- Contact Card -->
+            <div class="contact-card gsap-rise" id="contact">
+              <div class="kicker" style="margin-bottom:8px;" data-en="Privacy Office" data-bn="গোপনীয়তা সহায়তা ডেস্ক">Privacy Office</div>
+              <h3 data-en="Questions about your institutional data?" data-bn="তথ্য সুরক্ষা বিষয়ে কোনো প্রশ্ন বা সহায়তা প্রয়োজন?">Questions about your institutional data?</h3>
+              <p data-en="Reach out directly to AM Core Studios &amp; Jamia Islamia Darul Ulum Sheikhdi digital administration for verification, corrections, or deletion support."
+                 data-bn="তথ্য সংশোধন, যাচাই অথবা অ্যাকাউন্ট ডিলিট সংক্রান্ত যেকোনো প্রয়োজনে সরাসরি ইমেইল বা আমাদের ডিলিট পোর্টাল ব্যবহার করুন।">
+                Reach out directly to AM Core Studios &amp; Jamia Islamia Darul Ulum Sheikhdi digital administration for verification, corrections, or deletion support.
+              </p>
+
+              <div>
+                <button type="button" class="email-chip" onclick="copyText('arifmullikh.personal@gmail.com')" data-cursor="Copy" aria-label="Copy contact email address">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span>arifmullikh.personal@gmail.com</span>
+                </button>
+              </div>
+
+              <div class="contact-actions">
+                <a href="mailto:arifmullikh.personal@gmail.com?subject=Privacy%20Inquiry%20-%20Jamia%20Islamia%20Darul%20Ulum%20Sheikhdi" class="apple-btn-primary" data-cursor="Email" data-en="Email Privacy Support" data-bn="ইমেইল পাঠান">Email Privacy Support</a>
+                <a href="account-deletion.html" class="apple-btn-secondary" data-cursor="Portal" data-en="Open Deletion Portal" data-bn="অ্যাকাউন্ট ডিলিট পোর্টাল">Open Deletion Portal</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong style="color:var(--ink);" data-en="Jamia Islamia Darul Ulum Sheikhdi" data-bn="জামিয়া ইসলামিয়া দারুল উলুম শেখদী">Jamia Islamia Darul Ulum Sheikhdi</strong>
+        <span> · </span>
+        <span data-en="Sheikhdi Bottola, Jatrabari, Dhaka · Built by AM Core Studios" data-bn="শেখদী বটতলা, যাত্রাবাড়ী, ঢাকা · কারিগরি নির্মাণে AM Core Studios">Sheikhdi Bottola, Jatrabari, Dhaka · Built by AM Core Studios</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#top" data-en="Privacy Policy" data-bn="গোপনীয়তা নীতি">Privacy Policy</a></li>
+        <li><a href="#s4" data-en="Permissions" data-bn="অনুমতি">Permissions</a></li>
+        <li><a href="account-deletion.html" data-en="Account Deletion" data-bn="অ্যাকাউন্ট ডিলিট">Account Deletion</a></li>
+        <li><a href="mailto:arifmullikh.personal@gmail.com" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Progress Ring Back-to-Top & Toast -->
+  <button type="button" id="backTop" class="back-top" onclick="window.smoothScrollTo(0)" aria-label="Back to top">
+    <svg class="ring" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+      <circle cx="23" cy="23" r="19" stroke="var(--line)" stroke-width="2" />
+      <circle id="ringArc" cx="23" cy="23" r="19" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="119.38" />
+    </svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Vendor & Custom Multi-Module Scripts (exact load order) -->
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="js/webgl-stage.js?v=20261126"></script>
+  <script src="js/motion-engine.js?v=20261126"></script>
+  <script src="js/app.js?v=20261126"></script>
+</body>
+</html>

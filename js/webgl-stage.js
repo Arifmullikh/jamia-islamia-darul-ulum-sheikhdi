@@ -104,9 +104,16 @@
     const ringGeoB = new THREE.TorusGeometry(3.2, 0.022, 8, 8);
     const innerGeo = new THREE.OctahedronGeometry(1.75, 1);
 
-    const tealWireMat = new THREE.MeshBasicMaterial({ color: 0x14b8a6, wireframe: true, transparent: true, opacity: 0.14 });
-    const goldWireMat = new THREE.MeshBasicMaterial({ color: 0xeab348, wireframe: true, transparent: true, opacity: 0.12 });
-    const coreWireMat = new THREE.MeshBasicMaterial({ color: 0x34d399, wireframe: true, transparent: true, opacity: 0.09 });
+    const colTealDark = new THREE.Color(0x14b8a6);
+    const colGoldDark = new THREE.Color(0xeab348);
+    const colCoreDark = new THREE.Color(0x34d399);
+    const colTealLight = new THREE.Color(0x88ded7);
+    const colGoldLight = new THREE.Color(0xf2ce82);
+    const colCoreLight = new THREE.Color(0x9be7d2);
+
+    const tealWireMat = new THREE.MeshBasicMaterial({ color: colTealDark.clone(), wireframe: true, transparent: true, opacity: 0.14 });
+    const goldWireMat = new THREE.MeshBasicMaterial({ color: colGoldDark.clone(), wireframe: true, transparent: true, opacity: 0.12 });
+    const coreWireMat = new THREE.MeshBasicMaterial({ color: colCoreDark.clone(), wireframe: true, transparent: true, opacity: 0.09 });
 
     const ringA = new THREE.Mesh(ringGeoA, tealWireMat);
     const ringB = new THREE.Mesh(ringGeoB, goldWireMat);
@@ -141,6 +148,8 @@
     });
     const stars = new THREE.Points(pGeo, pMat);
     bgScene.add(stars);
+    const starColorDark = new THREE.Color(0xffffff);
+    const starColorLight = new THREE.Color(0xc8ede8);
 
     /* ---------- PASS 2: Kyant Liquid Glass SDF Refraction + 7-Band Dispersion ---------- */
     const glassScene = new THREE.Scene();
@@ -221,9 +230,9 @@
           float sd = sdRoundedRect(centered, halfSize, radius);
 
           // Soft ambient outer elevation shadow
-          float shadowMask = smoothstep(26.0, 0.0, sd) * step(0.0, sd);
-          vec3 shadowTint = mix(vec3(0.0), vec3(0.04, 0.14, 0.18), uTheme);
-          vec3 outCol = mix(baseCol, shadowTint, shadowMask * (0.28 - 0.18 * uTheme) * visibility);
+          float shadowMask = smoothstep(28.0, 0.0, sd) * step(0.0, sd);
+          vec3 shadowTint = mix(vec3(0.0), vec3(0.76, 0.85, 0.89), uTheme);
+          vec3 outCol = mix(baseCol, shadowTint, shadowMask * mix(0.28, 0.24, uTheme) * visibility);
 
           if (sd > 0.5) return outCol;
 
@@ -260,17 +269,20 @@
           }
 
           // Glass vibrancy + subtle crystal tint
-          vec3 frostTint = mix(vec3(0.06, 0.12, 0.16), vec3(0.95, 0.99, 1.0), uTheme);
-          glassSample = mix(glassSample * 1.10, frostTint, mix(0.14, 0.22, uTheme));
+          vec3 frostTint = mix(vec3(0.06, 0.12, 0.16), vec3(0.92, 0.98, 0.99), uTheme);
+          glassSample = mix(glassSample * 1.10, frostTint, mix(0.14, 0.28, uTheme));
 
           // Kyant DefaultHighlight 45deg Specular Rim Shader
           float angle = 0.785398 + uMouse.x * 0.45;
           vec2 lightNormal = vec2(cos(angle), sin(angle));
           float dotVal = dot(grad, lightNormal);
           float rimSpec = pow(abs(dotVal), 1.35);
-          float rimMask = smoothstep(2.6, 0.0, insideDist);
-          vec3 specColor = mix(vec3(0.55, 0.96, 0.88), vec3(1.0, 0.98, 0.92), step(0.0, dotVal));
-          glassSample += specColor * rimSpec * rimMask * mix(0.36, 0.58, uTheme);
+          float rimMask = smoothstep(2.8, 0.0, insideDist);
+          vec3 specColorDark = mix(vec3(0.55, 0.96, 0.88), vec3(1.0, 0.98, 0.92), step(0.0, dotVal));
+          vec3 specColorLight = mix(vec3(0.12, 0.62, 0.58), vec3(1.0, 0.99, 0.96), step(0.0, dotVal));
+          vec3 specColor = mix(specColorDark, specColorLight, uTheme);
+          glassSample = mix(glassSample, glassSample + specColor * rimSpec * 0.44, (1.0 - uTheme) * rimMask);
+          glassSample = mix(glassSample, mix(glassSample, specColor, 0.42 * rimSpec), uTheme * rimMask);
 
           // Anti-aliased edge composite
           float edgeAlpha = smoothstep(0.5, -1.2, sd);
@@ -366,10 +378,14 @@
 
       const isLight = uniforms.uTheme.value;
       const readFade = Math.max(0.28, 1.0 - uniforms.uScroll.value * 2.2);
-      tealWireMat.opacity = (0.14 - isLight * 0.05) * readFade;
-      goldWireMat.opacity = (0.12 - isLight * 0.03) * readFade;
-      coreWireMat.opacity = (0.09 - isLight * 0.03) * readFade;
-      pMat.opacity = (0.58 - isLight * 0.24) * Math.max(0.45, readFade);
+      tealWireMat.color.lerpColors(colTealDark, colTealLight, isLight);
+      goldWireMat.color.lerpColors(colGoldDark, colGoldLight, isLight);
+      coreWireMat.color.lerpColors(colCoreDark, colCoreLight, isLight);
+      tealWireMat.opacity = (0.14 - isLight * 0.075) * readFade;
+      goldWireMat.opacity = (0.12 - isLight * 0.06) * readFade;
+      coreWireMat.opacity = (0.09 - isLight * 0.05) * readFade;
+      pMat.color.lerpColors(starColorDark, starColorLight, isLight);
+      pMat.opacity = (0.58 - isLight * 0.42) * Math.max(0.45, readFade);
 
       latticeGroup.rotation.x = 0.25 + (my - 0.5) * 0.35 + uniforms.uScroll.value * 1.4;
       latticeGroup.rotation.y = t * 0.09 + (mx - 0.5) * 0.45 + uniforms.uScroll.value * 2.2;

@@ -41,7 +41,8 @@
     const auroraMat = new THREE.ShaderMaterial({
       uniforms,
       depthWrite: false,
-      transparent: true,
+      depthTest: false,
+      transparent: false,
       vertexShader: `
         varying vec2 vUv;
         void main() {
@@ -96,6 +97,7 @@
     });
     const bgQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), auroraMat);
     bgQuad.frustumCulled = false;
+    bgQuad.renderOrder = -10;
     bgScene.add(bgQuad);
 
     /* Sacred Islamic 8-Point Wireframe Lattice */
@@ -107,13 +109,13 @@
     const colTealDark = new THREE.Color(0x14b8a6);
     const colGoldDark = new THREE.Color(0xeab348);
     const colCoreDark = new THREE.Color(0x34d399);
-    const colTealLight = new THREE.Color(0x88ded7);
-    const colGoldLight = new THREE.Color(0xf2ce82);
-    const colCoreLight = new THREE.Color(0x9be7d2);
+    const colTealLight = new THREE.Color(0x52c4b9);
+    const colGoldLight = new THREE.Color(0xdcb45c);
+    const colCoreLight = new THREE.Color(0x78d9c4);
 
-    const tealWireMat = new THREE.MeshBasicMaterial({ color: colTealDark.clone(), wireframe: true, transparent: true, opacity: 0.14 });
-    const goldWireMat = new THREE.MeshBasicMaterial({ color: colGoldDark.clone(), wireframe: true, transparent: true, opacity: 0.12 });
-    const coreWireMat = new THREE.MeshBasicMaterial({ color: colCoreDark.clone(), wireframe: true, transparent: true, opacity: 0.09 });
+    const tealWireMat = new THREE.MeshBasicMaterial({ color: colTealDark.clone(), wireframe: true, transparent: true, depthWrite: false, opacity: 0.16 });
+    const goldWireMat = new THREE.MeshBasicMaterial({ color: colGoldDark.clone(), wireframe: true, transparent: true, depthWrite: false, opacity: 0.14 });
+    const coreWireMat = new THREE.MeshBasicMaterial({ color: colCoreDark.clone(), wireframe: true, transparent: true, depthWrite: false, opacity: 0.10 });
 
     const ringA = new THREE.Mesh(ringGeoA, tealWireMat);
     const ringB = new THREE.Mesh(ringGeoB, goldWireMat);
@@ -144,12 +146,12 @@
     pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     pGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     const pMat = new THREE.PointsMaterial({
-      size: 0.068, vertexColors: true, transparent: true, opacity: 0.58, sizeAttenuation: true
+      size: 0.068, vertexColors: true, transparent: true, depthWrite: false, opacity: 0.58, sizeAttenuation: true
     });
     const stars = new THREE.Points(pGeo, pMat);
     bgScene.add(stars);
     const starColorDark = new THREE.Color(0xffffff);
-    const starColorLight = new THREE.Color(0xc8ede8);
+    const starColorLight = new THREE.Color(0x9de0d6);
 
     /* ---------- PASS 2: Kyant Liquid Glass SDF Refraction + 7-Band Dispersion ---------- */
     const glassScene = new THREE.Scene();
@@ -381,11 +383,11 @@
       tealWireMat.color.lerpColors(colTealDark, colTealLight, isLight);
       goldWireMat.color.lerpColors(colGoldDark, colGoldLight, isLight);
       coreWireMat.color.lerpColors(colCoreDark, colCoreLight, isLight);
-      tealWireMat.opacity = (0.14 - isLight * 0.075) * readFade;
-      goldWireMat.opacity = (0.12 - isLight * 0.06) * readFade;
-      coreWireMat.opacity = (0.09 - isLight * 0.05) * readFade;
+      tealWireMat.opacity = (0.16 + isLight * 0.06) * readFade;
+      goldWireMat.opacity = (0.14 + isLight * 0.06) * readFade;
+      coreWireMat.opacity = (0.10 + isLight * 0.04) * readFade;
       pMat.color.lerpColors(starColorDark, starColorLight, isLight);
-      pMat.opacity = (0.58 - isLight * 0.42) * Math.max(0.45, readFade);
+      pMat.opacity = (0.58 - isLight * 0.16) * Math.max(0.45, readFade);
 
       latticeGroup.rotation.x = 0.25 + (my - 0.5) * 0.35 + uniforms.uScroll.value * 1.4;
       latticeGroup.rotation.y = t * 0.09 + (mx - 0.5) * 0.45 + uniforms.uScroll.value * 2.2;

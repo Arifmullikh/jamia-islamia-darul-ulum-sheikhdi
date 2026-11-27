@@ -176,12 +176,13 @@ if (searchField) {
 
 /* Toast & Copy */
 let toastTimer = null;
-window.copyText = function (txt) {
+window.copyText = function (txt, label) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(txt).then(() => {
       const t = document.getElementById('toast');
       if (!t) return;
-      t.textContent = (currentLang === 'bn' ? 'কপি হয়েছে: ' : 'Copied: ') + txt;
+      const shown = label || (txt.length > 48 ? (currentLang === 'bn' ? 'আবেদনের বার্তা' : 'request text') : txt);
+      t.textContent = (currentLang === 'bn' ? 'কপি হয়েছে: ' : 'Copied: ') + shown;
       t.classList.add('show');
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => t.classList.remove('show'), 2200);

@@ -156,12 +156,13 @@
       uniforms.uMouse.value.set(mx, my);
       uniforms.uTheme.value += (targetTheme - uniforms.uTheme.value) * 0.08;
 
-      // Adapt wireframe opacity subtly for Light vs Dark mode
+      // Adapt wireframe opacity subtly for Light vs Dark mode and soften while reading legal copy
       const isLight = uniforms.uTheme.value;
-      tealWireMat.opacity = 0.22 - isLight * 0.08;
-      goldWireMat.opacity = 0.18 - isLight * 0.04;
-      coreWireMat.opacity = 0.14 - isLight * 0.05;
-      pMat.opacity = 0.62 - isLight * 0.24;
+      const readFade = Math.max(0.28, 1.0 - uniforms.uScroll.value * 2.2);
+      tealWireMat.opacity = (0.14 - isLight * 0.05) * readFade;
+      goldWireMat.opacity = (0.12 - isLight * 0.03) * readFade;
+      coreWireMat.opacity = (0.09 - isLight * 0.03) * readFade;
+      pMat.opacity = (0.58 - isLight * 0.24) * Math.max(0.45, readFade);
 
       latticeGroup.rotation.x = 0.25 + (my - 0.5) * 0.35 + uniforms.uScroll.value * 1.4;
       latticeGroup.rotation.y = t * 0.09 + (mx - 0.5) * 0.45 + uniforms.uScroll.value * 2.2;
